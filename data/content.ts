@@ -56,7 +56,7 @@ export const pricingPlans: Plan[] = [
       'QR-фидбэк',
       'Сбор NPS и отзывов',
       'AI-анализ обратной связи (базовый)',
-      'Интеграция с POS (iiko, r_keeper, FrontPad)',
+      'Интеграция с POS (iiko, r_keeper, FrontPad)'
     ],
     buttonText: 'Выбрать Лайт',
     isPopular: false,
@@ -72,7 +72,7 @@ export const pricingPlans: Plan[] = [
       'Расширенная аналитика',
       'Перехват негатива',
       'Стимуляция к оставлению отзывов',
-      'Приём заказов через QR-меню',
+      'Приём заказов через QR-меню'
     ],
     buttonText: 'Выбрать Базовый',
     isPopular: false,
@@ -87,7 +87,7 @@ export const pricingPlans: Plan[] = [
       'Триггерные кампании',
       'Campaign Builder',
       'ROI-аналитика по промо',
-      'Умная сегментация гостей',
+      'Умная сегментация гостей'
     ],
     buttonText: 'Выбрать Про',
     isPopular: true,
@@ -102,11 +102,11 @@ export const pricingPlans: Plan[] = [
       'Агрегация отзывов с Яндекс, 2ГИС, Google',
       'Ответы и автоответы из системы',
       'Мультиканальные рассылки',
-      'AI-рекомендации и прогнозы',
+      'AI-рекомендации и прогнозы'
     ],
     buttonText: 'Связаться с нами',
     isPopular: false,
-  },
+  }
 ];
 
 export const faqData: FAQ[] = [
@@ -144,6 +144,6 @@ export const comparisonData: ComparisonData = {
         { feature: 'Агрегация внешних отзывов', competitors: [true, false, false] },
         { feature: 'Перехват негатива', competitors: [true, false, 'partial'] },
         { feature: 'Интеграция с iiko/r_keeper', competitors: [true, true, false] },
-        { feature: 'ROI-аналитика кампаний', competitors: [true, false, false] },
+        { feature: 'ROI-аналитика кампаний', competitors: [true, false, false] }
     ]
 };
