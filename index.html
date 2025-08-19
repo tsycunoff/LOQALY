@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOQALY — Платформа для управления рестораном: CRM, отзывы, аналитика</title>
+  <meta name="description" content="LOQALY — B2B SaaS для ресторанов. Увеличивайте прибыль с помощью ROI-калькулятора, AI-анализа отзывов, триггерных кампаний и интеграции с iiko, r_keeper.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #34D399; /* Яркий, свежий зеленый */
+      --primary-dark: #069466;
+      --secondary-color: #FBBF24; /* Теплый, акцентный желтый */
+      --text-dark: #1F2937;
+      --text-light: #4B5563;
+      --bg-light: #F9FAFB;
+      --bg-white: #FFFFFF;
+      --border-color: #E5E7EB;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --border-radius: 0.75rem; /* 12px */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    #root {
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    main {
+      flex-grow: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      border: 2px solid transparent;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-white);
+      color: var(--primary-dark);
+      border-color: var(--border-color);
+    }
+    .btn-secondary:hover {
+      background-color: var(--bg-light);
+      border-color: var(--primary-dark);
+    }
+
+    /* Floating CTA Button */
+    .floating-cta {
+        display: none;
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @keyframes dropdown-enter {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Utility classes */
+    .page-section {
+        padding: 80px 0;
+    }
+    .section-title {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 16px;
+        line-height: 1.3;
+        text-align: center;
+    }
+    .section-text {
+        font-size: 18px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .section-title {
+            font-size: 30px !important;
+        }
+        .page-section {
+            padding: 60px 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+        .floating-cta {
+            display: block;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            z-index: 100;
+            padding: 16px;
+            font-size: 18px;
+            box-shadow: var(--shadow-lg);
+        }
+        .section-title {
+            font-size: 28px !important;
+        }
+        .section-text {
+            font-size: 16px;
+        }
+        .hero-grid {
+            grid-template-columns: 1fr !important;
+        }
+        .hero-image-container {
+            display: none;
+        }
+        .grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react/": "https://esm.sh/react@18.2.0/"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
